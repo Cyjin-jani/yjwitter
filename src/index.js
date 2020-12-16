@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import firebase from './firebase';
+
+//check if firebase connected with this pj
+// console.log(firebase);
 
 
 ReactDOM.render(

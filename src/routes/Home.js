@@ -6,7 +6,7 @@ import {v4 as uuidv4} from 'uuid';
 function Home({ userObj }) {
     const [cweet, setCweet] = useState("");
     const [cweets, setCweets] = useState([]);
-    const [attachment, setAttachment] = useState();
+    const [attachment, setAttachment] = useState("");
     
     useEffect(() => {
         

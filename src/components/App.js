@@ -12,7 +12,13 @@ function App() {
     authService.onAuthStateChanged((user) => {
       if(user) {
         setIsLoggedIn(true);
-        setUserObj(user);
+        // setUserObj(user); option2
+        //option1
+        setUserObj({
+          displayName: user.displayName,
+          uid: user.uid,
+          updateProfile: (args) => user.updateProfile(args),
+        });
       } else {
         setIsLoggedIn(false);
       }
@@ -20,10 +26,21 @@ function App() {
     })
   }, []);
 
+  const refreshUser = () => {
+    const user = authService.currentUser;
+    // option 2
+    // setUserObj(Object.assign({}, user));
+    // option 1
+    setUserObj({
+      displayName: user.displayName,
+      uid: user.uid,
+      updateProfile: (args) => user.updateProfile(args),
+    })
+  }
 
   return (
     <>
-    {init ? <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} /> : 'initializing...'}
+    {init ? <AppRouter refreshUser={refreshUser} isLoggedIn={isLoggedIn} userObj={userObj} /> : 'initializing...'}
     {/* <footer>&copy; Chowitter {new Date().getFullYear()}</footer> */}
     </>
   );

@@ -8,6 +8,7 @@ function Profile({ refreshUser, userObj }) {
     const onLogOutClick = () => {
         authService.signOut();
         history.push("/");
+        
     }
 
     const onChange = (event) => {
@@ -16,9 +17,8 @@ function Profile({ refreshUser, userObj }) {
     }
 
     const getMyCweets = async() => {
-        const cweets = await dbService.collection("cweets").where("creatorId", "==", userObj.uid).
-        orderBy("createdAt").get();
-        // console.log(cweets.docs.map(doc => doc.data()));
+        const cweets = await dbService.collection("cweets").where("creatorId", "==", userObj.uid).orderBy("createdAt").get();
+        console.log(cweets.docs.map(doc => doc.data()));
     }
 
     useEffect(() => {
@@ -36,13 +36,22 @@ function Profile({ refreshUser, userObj }) {
     }
 
     return (
-        <>
-        <form onSubmit={onSubmit}>
-            <input type="text" placeholder="Display name" onChange={onChange} value={newDisplayName} />
-            <input type="submit" value="Update Profile" />
+        <div className="container">
+        <form onSubmit={onSubmit} className="profileForm">
+            <input type="text" placeholder="Display name" onChange={onChange} value={newDisplayName} autoFocus className="formInput" />
+            <input
+                type="submit"
+                value="Update Profile"
+                className="formBtn"
+                style={{
+                    marginTop: 10,
+                }}
+            />
         </form>
-            <button onClick={onLogOutClick}>Log Out</button>
-        </>
+            <span className="formBtn cancelBtn logOut" onClick={onLogOutClick}>
+                Log Out
+            </span>
+        </div>
     )
 }
 

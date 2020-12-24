@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/yjwitter/static/css/main.cc6f4877.chunk.css",
+    "main.js": "/yjwitter/static/js/main.bbf4f5af.chunk.js",
+    "main.js.map": "/yjwitter/static/js/main.bbf4f5af.chunk.js.map",
+    "runtime-main.js": "/yjwitter/static/js/runtime-main.3418d65b.js",
+    "runtime-main.js.map": "/yjwitter/static/js/runtime-main.3418d65b.js.map",
+    "static/js/2.1b3c0e45.chunk.js": "/yjwitter/static/js/2.1b3c0e45.chunk.js",
+    "static/js/2.1b3c0e45.chunk.js.map": "/yjwitter/static/js/2.1b3c0e45.chunk.js.map",
+    "index.html": "/yjwitter/index.html",
+    "static/css/main.cc6f4877.chunk.css.map": "/yjwitter/static/css/main.cc6f4877.chunk.css.map",
+    "static/js/2.1b3c0e45.chunk.js.LICENSE.txt": "/yjwitter/static/js/2.1b3c0e45.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3418d65b.js",
+    "static/js/2.1b3c0e45.chunk.js",
+    "static/css/main.cc6f4877.chunk.css",
+    "static/js/main.bbf4f5af.chunk.js"
+  ]
+}
